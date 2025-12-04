@@ -1,4 +1,5 @@
 import asyncio
+import os
 import time
 import logging
 from google import genai
@@ -7,7 +8,8 @@ from google.genai.types import Tool, GoogleSearch, GenerateContentConfig
 # Configure logger for this module
 logger = logging.getLogger(__name__)
 
-GOOGLE_API_KEY = "YOUR_GOOGLE_API_KEY_HERE"
+# Get API key from environment variable
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 client = genai.Client(api_key=GOOGLE_API_KEY)
 model = "gemini-2.5-flash"

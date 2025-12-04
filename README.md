@@ -24,13 +24,13 @@ pip install -r requirements.txt
 
 Before running the server, you need to configure your Google API key:
 
-1. Open `tools/google_search_tool.py`
-2. Replace `YOUR_GOOGLE_API_KEY_HERE` with your actual Google API key:
-```python
-GOOGLE_API_KEY = "your-actual-api-key-here"
+1. Create a `.env` file in the root directory of the project
+2. Add your Google API key to the `.env` file:
+```env
+GOOGLE_API_KEY=your-google-api-key-here
 ```
 
-Alternatively, you can use environment variables with `python-dotenv` for better security.
+**Note**: Make sure to add `.env` to your `.gitignore` file to keep your API key secure and never commit it to version control.
 
 ## Usage
 
@@ -61,6 +61,7 @@ This tool uses the Google Gemini API to perform web searches and returns relevan
 mcp-server/
 ├── server.py                 # Main MCP server file
 ├── requirements.txt          # Python dependencies
+├── .env                      # Environment variables (create this file)
 ├── tools/
 │   ├── __init__.py
 │   └── google_search_tool.py # Google search implementation

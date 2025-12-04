@@ -1,9 +1,13 @@
 import asyncio
 import logging
 from datetime import datetime
+from dotenv import load_dotenv
 from mcp.server.fastmcp import FastMCP
 from fastapi.responses import JSONResponse
 from tools.google_search_tool import perform_google_search
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Configure standard Python logging
 logging.basicConfig(
